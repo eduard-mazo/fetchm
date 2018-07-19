@@ -1,68 +1,111 @@
 @import "~bulma/bulma.sass";
+.wrapp {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
 
-$container-w: 320px;
-$container-h: 409px;
-$color-black: #212121;
-$color-yellow: #ff9300;
-$color-lightblue: #00bfd6;
-$color-whiteblue: #a3ecf3;
-$font-stack: "Roboto", sans-serif;
-
-.container {
-  height: $container-h;
-  width: $container-w;
-  font-family: $font-stack;
-  .level {
-    .-responsive {
-      max-width: 100%;
-    }
-    .-tittle {
-      font-size: 26px;
-      color: $color-lightblue;
-    }
-  }
-  .-label,
-  .-input {
-    padding: 0px 5px 0px 5px;
-    width: 100%;
+.sidenav {
+  height: 100%;
+  width: auto;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  padding-top: 60px;
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
     display: block;
+    transition: 0.3s;
   }
-  .-input {
-    border: none;
-    border-bottom: 1px solid $color-yellow;
-    margin-bottom: 12px;
-    font-size: 20px;
-    width: 100%;
-    color: $color-black;
-    &:focus {
-      outline: 0;
-    }
+  a:hover {
+    color: #f1f1f1;
   }
-  .-label {
-    color: $color-yellow;
-    font-size: 10px;
-    font-weight: bold;
-    margin-bottom: 2px;
+  .closebtn {
+    position: absolute;
+    top: 0;
+
+    font-size: 36px;
+    margin-left: 50px;
   }
-  .-btn {
-    text-align: right;
-    margin-bottom: 10px;
-    a {
-      color: white;
-      background-color: $color-lightblue;
-      padding: 5px 10px 5px 10px;
-      border-radius: 0.2em;
-      font-size: 20px;
-    }
-  }
-}
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-html {
-  font-size: 100%;
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #586e75;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc322f;
+}
+
+.hljs-formula {
+  background: #073642;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
 }
