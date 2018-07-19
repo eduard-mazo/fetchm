@@ -1,5 +1,6 @@
 <template lang="pug">
 #app
+  pmheader
   section.section
     .field.has-addons
       .control
@@ -17,11 +18,18 @@
       .columns
         .column(v-for="name in list")
           | {{name.name}} - {{name.artists[0].name}}
+  Pmfooter
 </template>
 
 <script>
 import trackServices from "./api/track.js";
+import Pmfooter from "./components/layout/Footer.vue";
+import Pmheader from "./components/layout/Header.vue";
 export default {
+  components:{
+    Pmfooter,
+    Pmheader
+  },
   name: "app",
   data() {
     return {
@@ -33,6 +41,8 @@ export default {
   methods: {
     search() {
       const self = this;
+      console.log("hola");
+
       trackServices
         .search(this.searchQuery)
         .then(res => (self.list = res.tracks.items));

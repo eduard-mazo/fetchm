@@ -1,0 +1,16 @@
+<template lang="pug">
+#app
+    section.hero.is-success
+        .hero-head
+            header.nav
+                .container
+                    .nav-left
+                        .nav-item
+                            strong ESAC 👨‍👩‍👧‍👧
+                    .nav-right.nav-menu
+        .hero-body
+            .container.has-text-centered
+                h1.title FAMILIA
+                h2.subtitle MAZO VELASQUEZ
+
+</template>
