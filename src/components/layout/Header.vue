@@ -9,7 +9,7 @@
                             strong ESAC 👨‍👩‍👧‍👧
                     .navbar-end.navbar-menu
                         router-link.navbar-item(:to="{name: 'search'}") Buscar 
-                        router-link.navbar-item(to="about") Nosotros
+                        router-link.navbar-item(:to="{name: 'about'}") Nosotros
         .hero-body
             .container.has-text-centered
                 h1.title FAMILIA

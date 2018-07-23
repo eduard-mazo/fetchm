@@ -5,6 +5,8 @@ import eventBus from "@/plugins/event-bus";
 import routes from "@/routes";
 import msToMm from "@/filter/ms-to-min.js";
 import blur from "@/directives/blur";
+import store from "@/store"
+
 Vue.use(VueRouter);
 Vue.use(eventBus);
 Vue.use(msToMm);
@@ -18,5 +20,6 @@ const router = new VueRouter({
 new Vue({
   el: "#app",
   render: h => h(App),
-  router
+  router,
+  store
 });
