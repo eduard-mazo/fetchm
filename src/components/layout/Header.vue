@@ -2,12 +2,14 @@
 #app
     section.hero.is-success
         .hero-head
-            header.nav
+            header.navbar.is-success
                 .container
-                    .nav-left
-                        .nav-item
+                    .navbar-start
+                        .navbar-item
                             strong ESAC 👨‍👩‍👧‍👧
-                    .nav-right.nav-menu
+                    .navbar-end.navbar-menu
+                        router-link.navbar-item(:to="{name: 'search'}") Buscar 
+                        router-link.navbar-item(to="about") Nosotros
         .hero-body
             .container.has-text-centered
                 h1.title FAMILIA

@@ -1,5 +1,5 @@
 <template lang="pug">
-    .card
+    .card(v-if="track && track.album")
         .card-image
             figure.image.is-1by1
                 img(:src="track.album.images[0].url")
@@ -13,16 +13,20 @@
                         strong {{track.name}}
                     p.subtitle.is-6 {{track.artists[0].name}}
             .content
-                small {{duration}}
+                small {{ track.duration_ms | ms-to-mm }}
                 nav.level
                     .level-left
-                        a.level-item
-                            span.icon.is-small(@click="selectTrack") ▶️
+                        button.level-item.button.is-primary(@click="selectTrack")
+                            span.icon.is-small ▶️
+                        button.level-item.button.is-warning(@click="goToTrack(track.id)")
+                            span.icon.is-small 🌎
             
 </template>
 
 <script>
+import trackMixins from "@/mixins/track";
 export default {
+  mixins: [trackMixins],
   data() {
     return {};
   },
@@ -30,23 +34,17 @@ export default {
     track: { type: Object, required: true }
   },
   methods: {
-    selectTrack() {
-      this.$emit("select", this.track.id);
-      this.$bus.$emit("set-track", this.track);
-    }
-  },
-  computed: {
-    duration() {
-      let millis = this.track.duration_ms;
-      let minutes = Math.floor(millis / 60000);
-      let seconds = ((millis % 60000) / 1000).toFixed(0);
-      return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    goToTrack(id) {
+      this.$router.push({ name: "track", params: { id } });
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.card {
+  margin-top: 20px;
+}
 small {
   color: #707070;
 }
